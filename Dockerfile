@@ -31,9 +31,14 @@ RUN cd /usr/local/ && curl -L -O http://dl.google.com/android/android-sdk_r24.4.
     echo y | /usr/local/android-sdk-linux/tools/android update sdk -a --no-ui --filter "sys-img-armeabi-v7a-android-23"
 
 #RUN echo no | android create avd --force -n test -t android-23
-RUN wget https://github.com/ksoichiro/dockerfiles/blob/master/android-emulator/start-emulator
+RUN wget https://raw.githubusercontent.com/ksoichiro/dockerfiles/master/android-emulator/wait-for-emulator
 RUN chmod 755 wait-for-emulator
 RUN cp wait-for-emulator /usr/local/bin/
+
+RUN wget https://github.com/ksoichiro/dockerfiles/blob/master/android-emulator/start-emulator
+RUN chmod 755 start-emulator
+RUN cp start-emulator /usr/local/bin/
+
 RUN echo no | android create avd --force --name test --target android-23 --abi armeabi-v7a --skin WVGA800 --sdcard 16M
 
 
