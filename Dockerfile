@@ -39,7 +39,7 @@ RUN wget https://github.com/ksoichiro/dockerfiles/blob/master/android-emulator/s
 RUN chmod 755 start-emulator
 RUN cp start-emulator /usr/local/bin/
 
-RUN echo no | android create avd --force --name test --target android-23 --abi armeabi-v7a --skin WVGA800 --sdcard 16M
+#RUN echo no | android create avd --force --name test --target android-23 --abi armeabi-v7a --skin WVGA800 --sdcard 16M
 
 
 # Install Android NDK
